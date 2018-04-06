@@ -16,4 +16,4 @@ RUN $DEFAULT_LAUNCH_NOSTART
 # Configure JBoss
 RUN $JBOSS_HOME/bin/jboss-cli.sh --file=/extensions/actions.cli
 
-RUN $DEFAULT_LAUNCH
+# RUN $DEFAULT_LAUNCH
