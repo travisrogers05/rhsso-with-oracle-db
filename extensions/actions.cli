@@ -1,6 +1,0 @@
-embed-server --std-out=echo  --server-config=standalone-openshift.xml
-batch
-/subsystem=datasources/jdbc-driver=oracle:add(driver-name=oracle,driver-module-name=com.oracle,driver-xa-datasource-class-name=oracle.jdbc.xa.client.OracleXADataSource)
-/subsystem=datasources/data-source=KeycloakDS:add(jndi-name="java:jboss/datasources/KeycloakDS",connection-url="jdbc:oracle:thin:@oracle-12cr2.rhev-ci-vms.eng.rdu2.redhat.com:1521:dballo",driver-name=oracle,user-name=dballo12,password=dballo12,valid-connection-checker-class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleValidConnectionChecker",stale-connection-checker-class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleStaleConnectionChecker",exception-sorter-class-name="org.jboss.jca.adapters.jdbc.extensions.oracle.OracleExceptionSorter")
-run-batch
-quit
