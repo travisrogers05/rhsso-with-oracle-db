@@ -13,6 +13,10 @@ This example adds an Oracle JDBC driver as a module into a Red Hat SSO image dur
   - An `install.sh` [file](https://github.com/travisrogers05/eap-oracle-db/blob/master/extensions/install.sh) that is executed during the Openshift s2i build process.  This script takes care of installing the Oracle JDBC driver as a module into the JBoss EAP image.  (adding files to the image and updating the standalone-openshift.xml to include the driver config)
 - A `configuration` [directory](https://github.com/travisrogers05/eap-oracle-db/blob/master/configuration) that contains
   - A `datasources.env` [file](https://github.com/travisrogers05/eap-oracle-db/blob/master/configuration/datasources.env) that provides all the specifics for the datasource.  These settings are incorporated into the JBoss EAP configuration at pod deploy time.  Multiple datasources can be provided, although this example uses only one.  Refer to the [JBoss EAP for Openshift documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html-single/red_hat_jboss_enterprise_application_platform_for_openshift/#S2I-Artifacts) for further details about the expected contents of this file.
+- A [template file](https://github.com/travisrogers05/rhsso-with-oracle-db/blob/master/sso72-https-oracle-external.json) that is derived from an [example template](https://github.com/jboss-openshift/application-templates/blob/ose-v1.4.13/sso/sso72-https.json) provided by Red Hat.  The template has been modified to 
+  - add a [buildconfig](https://github.com/travisrogers05/rhsso-with-oracle-db/blob/master/sso72-https-oracle-external.json#L356-#L413) to allow the inclusion of files from this git repo into the image.
+  - [parameters](https://github.com/travisrogers05/rhsso-with-oracle-db/blob/master/sso72-https-oracle-external.json#L45-#L65) for building from a git repository  
+  - the addition of the `ENV_FILES` environment variable to allow for providing datasource settings to a pod at deploy time.
 
 
 ## How it works
