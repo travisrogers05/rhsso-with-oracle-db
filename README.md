@@ -4,7 +4,7 @@ Example of adding adding and using and Oracle JDBC datasource to a Red Hat Singl
 
 This example adds an Oracle JDBC driver as a module into a Red Hat SSO image during an Openshift based source to image (s2i) build.  A datasource is created at deploy time that uses the Oracle JDBC driver.  This example assumes that the Oracle database is visible to pods via DNS alone.
 
-**NOTE:** The Oracle JDBC driver is not provided with this example.  [Download the JDBC driver.](http://www.oracle.com/technetwork/database/features/jdbc/jdbc-ucp-122-3110062.html)
+**NOTE:** The Oracle JDBC driver is not provided with this example.  [Download the JDBC driver.](http://www.oracle.com/technetwork/database/application-development/jdbc/downloads)
 
 This repository provides a working reference which includes:
 
